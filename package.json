@@ -1,0 +1,20 @@
+{
+  "name": "ATB-Animations",
+  "version": "0.0.1",
+  "description": "Various Animations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/All-Things-Bwana/Animations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/All-Things-Bwana/Animations/issues"
+  },
+  "homepage": "https://github.com/All-Things-Bwana/Animations#readme"
+}

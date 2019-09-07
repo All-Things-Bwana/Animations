@@ -1,0 +1,313 @@
+:root {
+  --color-white:     #FFFFFF;
+  --color-gray:      #D9D8D8;
+  --color-dark-gray: #686868;
+  --color-red:       #E00000;
+  --color-blue:      #00B4FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color-dark-gray);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+.icon {
+  height: 100%;
+  width: auto;
+  background-color: var(--color-dark-gray);
+}
+
+.thumb-icon {
+  -webkit-mask: url(images/thumb.svg) no-repeat center;
+  mask: url(images/thumb.svg) no-repeat center;
+  animation: likeIcon 5s forwards;
+}
+
+.bell-icon {
+  -webkit-mask: url(images/sound.svg) no-repeat center;
+  mask: url(images/sound.svg) no-repeat center;
+  animation: bellIcon 5s forwards;
+}
+
+.cursor {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  top: -1000px;
+  left: -1000px;
+  animation: moveCursor 5s forwards;
+  z-index: 100;
+}
+
+.container,
+.button {
+  display: grid;  
+}
+
+.container {
+  position: relative;
+  margin: 50px;
+  grid-gap: 10%;
+}
+
+.button {
+  background: var(--color-gray);
+  width: 130px;
+  height: 20px;
+  border-radius: 3%;
+  box-shadow: 2px 2px 5px var(--color-dark-gray);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.like,
+.subscribe {
+}
+
+.like {
+  grid-template-columns: 20px 1fr;  
+  animation: like 5s forwards;
+}
+
+.comment {
+  animation: comment 5s forwards; 
+}
+
+.subscribe {
+  position: relative;
+  z-index: 10;
+  animation: subscribe 5s forwards; 
+}
+
+.button img {
+  height: 20px;
+  width: auto;
+}
+
+.button span {
+  text-align: center;
+}
+
+.bell-icon {
+  position: absolute;
+  right: 0;
+  z-index: 0;
+}
+
+@keyframes moveCursor {
+  0% {
+    top: -1000px;
+    left: -1000px;
+  }
+
+  20% {
+    top: 20px;
+    left: 50px; 
+    transform: scale(1);
+  }
+
+  22% {
+    transform: scale(0.5);
+  }
+
+  24% {
+    top: 20px;
+    transform: scale(1);
+  }
+
+  30% {
+    top: 60px;
+    left: 70px;
+    transform: scale(1);
+  }
+  
+  32% {
+    transform: scale(0.5);
+  }
+
+  34% {
+    transform: scale(1);
+  }
+
+  50% {
+    top: 120px;
+    left: 20px;
+    transform: scale(1);  
+  }
+
+  52% {
+    transform: scale(0.8);
+  }
+
+  54% {
+    transform: scale(1);
+  }
+
+  99% {
+    left: -200px;
+  }
+  100% {
+    top: 200px;
+    left: -200px;
+  }
+}
+
+@keyframes like {
+  0% {
+    background-color: var(--color-gray);
+    color: var(--color-dark-gray);
+  }
+
+  20% {
+    background-color: var(--color-gray);
+    color: var(--color-dark-gray);
+    transform: scale(1);
+  }
+
+  22% {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    transform: scale(1.2);
+  }
+
+  24% {
+    transform: scale(1);
+  }
+
+  100% {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+}
+
+@keyframes likeIcon {
+  0% {
+    background-color: var(--color-dark-gray);
+  }
+
+  20% {
+    background-color: var(--color-dark-gray);
+    transform: rotate(0deg);    
+  }
+
+  21% {
+    transform: rotate(15deg);
+  }
+
+  22% {
+    background-color: var(--color-white);
+  }
+
+  25% {
+    transform: rotate(-15deg);
+  }
+
+  30% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    background-color: var(--color-white);
+  }
+}
+
+@keyframes comment {
+  0% {
+    background-color: var(--color-gray);
+    color: var(--color-dark-gray);
+  }
+
+  30% {
+    background-color: var(--color-gray);
+    color: var(--color-dark-gray);
+    transform: scale(1);
+  }
+
+  32% {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    transform: scale(0.8);
+  }
+
+  34% {
+    transform: scale(1);
+  }
+
+  100% {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+}
+
+@keyframes subscribe {
+  0% {
+    background-color: var(--color-gray);
+    color: var(--color-dark-gray);
+  }
+
+  50% {
+    background-color: var(--color-gray);
+    color: var(--color-dark-gray);
+    transform: scale(1);
+  }
+
+  52% {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    transform: scale(0.8);
+  }
+
+  54% {
+    transform: scale(1);
+  }
+
+  100% {
+    background-color: var(--color-red);
+    color: var(--color-white);
+  }
+}
+
+@keyframes bellIcon {
+  0% {
+    width: 0px
+  }
+
+  50% {
+    width: 0px;
+    right: 0px;
+    transform: scale(1);
+  }
+
+  54% {
+    transform: rotate(15deg);
+    transform: scale(1.2);
+  }
+
+  58% {
+    width: 20px;
+    right: -30px;
+    transform: rotate(-15deg);
+  }
+
+  62% {
+    transform: rotate(15deg);
+  }
+
+  64% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    width: 20px;
+    right: -30px;
+  }
+}
