@@ -26,22 +26,22 @@ body {
 .thumb-icon {
   -webkit-mask: url(images/thumb.svg) no-repeat center;
   mask: url(images/thumb.svg) no-repeat center;
-  animation: likeIcon 5s forwards;
+  animation: likeIcon 6s forwards;
 }
 
 .bell-icon {
   -webkit-mask: url(images/sound.svg) no-repeat center;
   mask: url(images/sound.svg) no-repeat center;
-  animation: bellIcon 5s forwards;
+  animation: bellIcon 6s forwards;
 }
 
 .cursor {
   position: absolute;
-  width: 30px;
+  width: 25px;
   height: auto;
   top: -1000px;
   left: -1000px;
-  animation: moveCursor 5s forwards;
+  animation: moveCursor 6s forwards;
   z-index: 100;
 }
 
@@ -75,17 +75,17 @@ body {
 
 .like {
   grid-template-columns: 20px 1fr;  
-  animation: like 5s forwards;
+  animation: like 6s forwards;
 }
 
 .comment {
-  animation: comment 5s forwards; 
+  animation: comment 6s forwards; 
 }
 
 .subscribe {
   position: relative;
   z-index: 10;
-  animation: subscribe 5s forwards; 
+  animation: subscribe 6s forwards; 
 }
 
 .button img {
@@ -109,53 +109,86 @@ body {
     left: -1000px;
   }
 
-  20% {
+  /* Move to Leave a like */
+  10% {
     top: 20px;
     left: 50px; 
     transform: scale(1);
   }
 
-  22% {
+  /* Click leave a like*/
+  12% {
     transform: scale(0.5);
   }
 
-  24% {
+  14% {
     top: 20px;
     transform: scale(1);
   }
 
-  30% {
+  /* Move to Comment */
+  20% {
     top: 60px;
     left: 70px;
     transform: scale(1);
   }
   
-  32% {
+  /* Click Comment */
+  22% {
     transform: scale(0.5);
+  }
+
+  24% {
+    transform: scale(1);
+  }
+
+  /* Move to subscribe */
+  30% {
+    top: 120px;
+    left: 50px;
+    transform: scale(1);  
+  }
+
+  /* Click subscribe*/
+  32% {
+    transform: scale(0.8);
   }
 
   34% {
     transform: scale(1);
   }
 
-  50% {
-    top: 120px;
-    left: 20px;
-    transform: scale(1);  
-  }
-
-  52% {
-    transform: scale(0.8);
-  }
-
-  54% {
+  /* Move to Bell*/
+  40% {
+    top: 125px;
+    left: 165px;
     transform: scale(1);
   }
 
-  99% {
+  /* Click Bell*/
+  42% {
+    transform: scale(0.8);
+  }
+
+  44% {
+    transform: scale(1);
+  }
+
+  45% {
+    top: 125px;
+    left: 165px;
+  }
+
+  /* Move off screen*/
+  55% {
+    top: 200px;
+  }
+
+  60% {
     left: -200px;
   }
-  100% {
+
+  70% {
     top: 200px;
     left: -200px;
   }
@@ -167,19 +200,19 @@ body {
     color: var(--color-dark-gray);
   }
 
-  20% {
+  10% {
     background-color: var(--color-gray);
     color: var(--color-dark-gray);
     transform: scale(1);
   }
 
-  22% {
+  12% {
     background-color: var(--color-blue);
     color: var(--color-white);
     transform: scale(1.2);
   }
 
-  24% {
+  14% {
     transform: scale(1);
   }
 
@@ -194,24 +227,31 @@ body {
     background-color: var(--color-dark-gray);
   }
 
-  20% {
+  10% {
     background-color: var(--color-dark-gray);
-    transform: rotate(0deg);    
   }
 
-  21% {
-    transform: rotate(15deg);
-  }
-
-  22% {
+  11% {
     background-color: var(--color-white);
   }
 
-  25% {
+  12% {
+    transform: rotate(0deg);    
+  }
+
+  14% {
+    transform: rotate(15deg);
+  }
+
+  16% {
+    background-color: var(--color-white);
+  }
+
+  18% {
     transform: rotate(-15deg);
   }
 
-  30% {
+  20% {
     transform: rotate(0deg);
   }
 
@@ -226,19 +266,19 @@ body {
     color: var(--color-dark-gray);
   }
 
-  30% {
+  20% {
     background-color: var(--color-gray);
     color: var(--color-dark-gray);
     transform: scale(1);
   }
 
-  32% {
+  22% {
     background-color: var(--color-blue);
     color: var(--color-white);
     transform: scale(0.8);
   }
 
-  34% {
+  24% {
     transform: scale(1);
   }
 
@@ -254,19 +294,19 @@ body {
     color: var(--color-dark-gray);
   }
 
-  50% {
+  30% {
     background-color: var(--color-gray);
     color: var(--color-dark-gray);
     transform: scale(1);
   }
 
-  52% {
+  32% {
     background-color: var(--color-red);
     color: var(--color-white);
     transform: scale(0.8);
   }
 
-  54% {
+  34% {
     transform: scale(1);
   }
 
@@ -281,33 +321,34 @@ body {
     width: 0px
   }
 
-  50% {
+  30%{
     width: 0px;
     right: 0px;
-    transform: scale(1);
   }
 
-  54% {
-    transform: rotate(15deg);
-    transform: scale(1.2);
+  34% {
+    width: 25px;
+    right: -35px;
   }
 
-  58% {
-    width: 20px;
-    right: -30px;
-    transform: rotate(-15deg);
+  40% {
+    transform: rotate(0deg) scale(1);
   }
 
-  62% {
-    transform: rotate(15deg);
+  42% {
+    transform: rotate(15deg) scale(1.2);
   }
 
-  64% {
-    transform: rotate(0deg);
+  44% {
+    transform: rotate(-15deg) scale(1.2);
+  }
+
+  46% {
+    transform: rotate(0deg) scale(1);
   }
 
   100% {
-    width: 20px;
-    right: -30px;
+    width: 25px;
+    right: -35px;
   }
 }
